@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:stunet/presentation/widgets/shared/custom_appbar.dart';
 
 
 class LoginScreen extends StatelessWidget {
@@ -9,11 +10,15 @@ class LoginScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text("Login"),
-      ),
-      body: const Center(child: Text('Login Screen'))
+    return const Scaffold(
+      appBar: PreferredSize(
+        preferredSize: Size.fromHeight(60),
+        child: CustomAppBar(title: 'Login',)
+        ),
+      body:  Center(
+        child: Text('Login Screen'),
+      )
+    
     );
   }
 }
