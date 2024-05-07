@@ -14,11 +14,7 @@ class HomeScreen extends StatelessWidget {
       appBar: AppBar(
         title: const Text('Home')
       ),
-      body: const Center(child: Text('5 clicks!')),
-      floatingActionButton: FloatingActionButton(
-      onPressed: (){},
-      child: const Icon(Icons.add),
-      ),
+      body: const Center(child: Text('5 clicks!'))
     );
   }
 }
