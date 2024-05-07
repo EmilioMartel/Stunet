@@ -1,4 +1,3 @@
-import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:stunet/presentation/screens/auth/login_screen.dart';
 import 'package:stunet/presentation/screens/auth/signin_screen.dart';
@@ -10,7 +9,8 @@ import 'package:stunet/presentation/screens/stunet/search_screen.dart';
 
 final appRouter = GoRouter(
   initialLocation: '/',
-  routes: [GoRoute(
+  routes: [
+    GoRoute(
       path: '/',
       name: LoginScreen.name,
       builder: (context, state) => const LoginScreen(),
