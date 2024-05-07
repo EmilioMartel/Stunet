@@ -14,9 +14,8 @@ class LoginScreen extends StatelessWidget {
     TextEditingController passwordController = TextEditingController();
 
     return Scaffold(
-      appBar: const PreferredSize(
-        preferredSize: Size.fromHeight(60),
-        child: CustomAppBar(title: 'Login',),
+      appBar: AppBar(
+        title: const Text('Login'),
       ),
       body: Padding(
         padding: const EdgeInsets.all(20.0),
@@ -39,7 +38,6 @@ class LoginScreen extends StatelessWidget {
               ElevatedButton(
                 onPressed: () {
                   // Captura el valor del correo electrónico y la contraseña
-                  
                   String email = emailController.text;
                   String password = passwordController.text;
 
@@ -67,6 +65,7 @@ class LoginScreen extends StatelessWidget {
               GestureDetector(
                 onTap: () {
                   // Acción al presionar el texto de registro
+                  GoRouter.of(context).go('/signin');
                 },
                 child: const Text(
                   'Do not have an account yet?, Create it here!',
