@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:stunet/presentation/widgets/shared/custom_appbar.dart';
 
 class LoginScreen extends StatelessWidget {
   static const String name = 'login-screen';
