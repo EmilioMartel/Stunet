@@ -56,7 +56,7 @@ class LoginScreen extends StatelessWidget {
                     return; // Detiene la ejecución del resto del código
                   }
                   // Acción al presionar el botón de iniciar sesión
-                  GoRouter.of(context).go('/home');
+                  GoRouter.of(context).go('/main');
                 },
                 child: const Text('Get me in!'),
               ),

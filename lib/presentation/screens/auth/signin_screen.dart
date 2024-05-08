@@ -236,7 +236,7 @@ class _SignInScreenState extends State<SignInScreen> {
               ElevatedButton(
                 onPressed: () {
                   if (_validateCurrentPage()) {
-                    GoRouter.of(context).go('/home');
+                    GoRouter.of(context).go('/main');
                   } else {
                     ScaffoldMessenger.of(context).showSnackBar(
                       const SnackBar(content: Text('Please fill all fields correctly')),
