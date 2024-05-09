@@ -11,7 +11,7 @@ import 'package:stunet/presentation/providers/yes_no_provider.dart';
 Future<void> main() async {
   await dotenv.load(fileName: '.env');
   
-  runApp( MainApp());
+  runApp( const MainApp());
 }
 
 
