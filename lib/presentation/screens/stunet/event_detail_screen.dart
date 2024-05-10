@@ -21,7 +21,7 @@ class EventDetailScreen extends StatelessWidget {
             const SizedBox(height: 16),
             Text(
               'Title: ${event.title}',
-              style: TextStyle(fontWeight: FontWeight.bold),
+              style: const TextStyle(fontWeight: FontWeight.bold),
             ),
             Text('Category: ${event.category}'),
             Text('Price: ${event.isFree ? 'Gratis' : 'Pago'}'),
