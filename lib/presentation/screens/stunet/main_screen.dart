@@ -37,7 +37,7 @@ class _MainScreenState extends State<MainScreen> {
   ];
 
   // Estado para controlar el modo claro/oscuro
-  bool _isDarkMode = true;
+  bool _isDarkMode = false;
 
   // Función para cambiar entre el modo claro y oscuro
   void _toggleDarkMode() {

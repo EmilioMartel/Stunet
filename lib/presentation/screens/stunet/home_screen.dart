@@ -9,27 +9,27 @@ class HomeScreen extends StatelessWidget {
 
   final List<HomeEvent> events = [
     HomeEvent(
-      title: 'Concierto en vivo',
-      description: 'Ven y disfruta de música en vivo esta noche',
+      title: 'Life Concert',
+      description: 'Come and enjoy the live music this incredible night',
       date: DateTime.now().add(const Duration(days: 1)),
     ),
     HomeEvent(
-      title: 'Exposición de arte',
-      description: 'Descubre nuevas obras de arte en nuestra galería',
+      title: 'Art exposition',
+      description: 'Discover new art pieces in our gallery. It will be sensorial experience',
       date: DateTime.now().add(const Duration(days: 2)),
     ),
   ];
 
   final List<FriendPost> friendPosts = [
     FriendPost(
-      title: 'Nuevo proyecto',
-      message: 'Empezando un nuevo proyecto de desarrollo de aplicaciones',
+      title: 'New project',
+      message: 'Starting a new IDGS subject project. Im exciting!',
       date: DateTime.now().subtract(const Duration(days: 2)),
       user: 'Juan',
     ),
     FriendPost(
-      title: 'Vacaciones en la playa',
-      message: '¡Disfrutando de unas maravillosas vacaciones en la playa!',
+      title: 'Beach Holidays',
+      message: 'Enjoying a wonderfull vacation at the beach!',
       date: DateTime.now().subtract(const Duration(days: 5)),
       user: 'María',
     ),
@@ -44,10 +44,10 @@ class HomeScreen extends StatelessWidget {
       body: ListView(
         padding: const EdgeInsets.all(16.0),
         children: [
-          _buildSectionTitle('Eventos'),
+          _buildSectionTitle('Events'),
           _buildEventList(),
           const SizedBox(height: 20.0),
-          _buildSectionTitle('Publicaciones de Amigos'),
+          _buildSectionTitle('Friends posts'),
           _buildFriendPostList(),
         ],
       ),
@@ -68,54 +68,52 @@ class HomeScreen extends StatelessWidget {
     );
   }
 
-  Widget _buildEventList() {
-    return Column(
-      children: events.map((event) {
-        return Column(
-          children: [
-            ListTile(
-              title: Text(
+Widget _buildEventList() {
+  return Column(
+    children: events.map((event) {
+      return Card(
+        margin: const EdgeInsets.symmetric(vertical: 8.0),
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(12.0),
+        ),
+        elevation: 2.0,
+        child: Padding(
+          padding: const EdgeInsets.all(16.0),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(
                 event.title,
                 style: const TextStyle(
-                  fontWeight: FontWeight.bold,
                   fontSize: 18.0,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.blue,
                 ),
               ),
-              subtitle: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  const SizedBox(height: 8.0),
-                  Text(
-                    event.description,
-                    style: const TextStyle(
-                      fontSize: 16.0,
-                    ),
-                  ),
-                  const SizedBox(height: 4.0),
-                  Text(
-                    'Fecha: ${event.date.day}/${event.date.month}/${event.date.year}',
+              const SizedBox(height: 8.0),
+              Text(
+                event.description,
+                style: const TextStyle(
+                  fontSize: 16.0,
+                ),
+              ),
+              const SizedBox(height: 8.0),
+
+              Text(
+                    'Date: ${event.date.day}/${event.date.month}/${event.date.year}',
                     style: TextStyle(
                       fontSize: 14.0,
                       color: Colors.grey[600],
                     ),
+                    textAlign: TextAlign.end,
                   ),
-                ],
-              ),
-              tileColor: Colors.grey[200],
-              contentPadding: const EdgeInsets.symmetric(
-                vertical: 12.0,
-                horizontal: 16.0,
-              ),
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(12.0),
-              ),
-            ),
-            const SizedBox(height: 16.0), // Espacio vertical entre eventos
-          ],
-        );
-      }).toList(),
-    );
-  }
+            ],
+          ),
+        ),
+      );
+    }).toList(),
+  );
+}
 
   Widget _buildFriendPostList() {
     return Column(
@@ -151,19 +149,20 @@ class HomeScreen extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Text(
-                      'Publicado por ${post.user}',
+                      'Date: ${post.date.day}/${post.date.month}/${post.date.year}',
                       style: TextStyle(
                         fontSize: 14.0,
                         color: Colors.grey[600],
                       ),
                     ),
                     Text(
-                      'Fecha: ${post.date.day}/${post.date.month}/${post.date.year}',
+                      '@${post.user}',
                       style: TextStyle(
                         fontSize: 14.0,
                         color: Colors.grey[600],
                       ),
                     ),
+                    
                   ],
                 ),
               ],
