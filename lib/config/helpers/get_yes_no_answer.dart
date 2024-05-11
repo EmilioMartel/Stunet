@@ -16,5 +16,4 @@ class GetYesNoAnswer {
     return yesNoModel.toMessageEntity();
   }
 
-
 }

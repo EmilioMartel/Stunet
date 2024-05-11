@@ -12,9 +12,9 @@ class DiscoverScreen extends StatefulWidget {
 
 class _DiscoverScreenState extends State<DiscoverScreen> {
   final List<Profile> profiles = [
-    Profile(name: 'John', age: 25, imageUrl: 'https://pics.filmaffinity.com/261079333126887-nm_200.jpg'),
-    Profile(name: 'Josefa', age: 27, imageUrl: 'https://s1.elespanol.com/2023/08/08/cultura/series/785181485_235220578_1706x960.jpg'),
-    Profile(name: 'Pedro Sanchez', age: 30, imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/f/f0/Pedro_Sánchez_in_2023.jpg'),
+    Profile(name: 'Jorge Vega', study: 'Informatic Engineering', age: 25, imageUrl: 'https://pics.filmaffinity.com/261079333126887-nm_200.jpg'),
+    Profile(name: 'Josefa', study: 'Modern Arts', age: 27, imageUrl: 'https://s1.elespanol.com/2023/08/08/cultura/series/785181485_235220578_1706x960.jpg'),
+    Profile(name: 'Pedro Sanchez', study: 'Arquiteture', age: 30, imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/f/f0/Pedro_Sánchez_in_2023.jpg'),
     // Agrega más perfiles aquí
   ];
 
@@ -26,7 +26,7 @@ class _DiscoverScreenState extends State<DiscoverScreen> {
       body: profiles.isEmpty
           ? const Center(
               child: Text(
-                '¡No hay más personas cerca de ti para conocer!',
+                'There is no more people near you! \nTry later :D',
                 style: TextStyle(fontSize: 20, 
                 fontWeight: FontWeight.bold,
                 ),
@@ -94,10 +94,11 @@ class _DiscoverScreenState extends State<DiscoverScreen> {
 
 class Profile {
   final String name;
+  final String study;
   final int age;
   final String imageUrl;
 
-  Profile({required this.name, required this.age, required this.imageUrl});
+  Profile({required this.name, required this.study, required this.age, required this.imageUrl});
 }
 
 class ProfileCard extends StatelessWidget {
@@ -137,6 +138,11 @@ class ProfileCard extends StatelessWidget {
                   Text(
                     '${profile.age} years old',
                     style: const TextStyle(fontSize: 16),
+                  ),
+                  const SizedBox(height: 5,),
+                  Text(
+                    profile.study,
+                    style: const TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
                   ),
                 ],
               ),

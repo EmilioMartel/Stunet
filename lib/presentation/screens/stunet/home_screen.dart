@@ -1,30 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:stunet/domain/entities/friend_post.dart';
+import 'package:stunet/domain/entities/home_event.dart';
 
-class HomeEvent {
-  final String title;
-  final String description;
-  final DateTime date;
 
-  HomeEvent({
-    required this.title,
-    required this.description,
-    required this.date,
-  });
-}
-
-class FriendPost {
-  final String title;
-  final String message;
-  final DateTime date;
-  final String user;
-
-  FriendPost({
-    required this.title,
-    required this.message,
-    required this.date,
-    required this.user,
-  });
-}
 
 class HomeScreen extends StatelessWidget {
   static const name = 'home-screen';
@@ -55,6 +33,7 @@ class HomeScreen extends StatelessWidget {
       date: DateTime.now().subtract(const Duration(days: 5)),
       user: 'María',
     ),
+    
   ];
 
   HomeScreen({Key? key}) : super(key: key);

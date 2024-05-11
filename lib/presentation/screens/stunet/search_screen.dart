@@ -13,8 +13,8 @@ class SearchScreen extends StatelessWidget {
   static const name = 'search-screen';
 
   final List<Event> events = [
-    Event(title: "Cine X", imageUrl: "https://cd1.taquilla.com/data/images/t/c6/cine-yelmo-vigo.jpg", isFree: true, category: "Cine"),
-    Event(title: "Fiesta Y", imageUrl: "https://elolivar.es/olivar-content/uploads/2023/09/como-organizar-una-fiesta.jpg", isFree: false, category: "Fiesta"),
+    Event(title: "Cinama of Friendship", imageUrl: "https://cd1.taquilla.com/data/images/t/c6/cine-yelmo-vigo.jpg", isFree: true, category: "Cinema"),
+    Event(title: "Party with Jesus", imageUrl: "https://elolivar.es/olivar-content/uploads/2023/09/como-organizar-una-fiesta.jpg", isFree: false, category: "Party"),
     // Agrega más eventos aquí
   ];
 
@@ -73,7 +73,7 @@ class SearchScreen extends StatelessWidget {
       child: ListTile(
         leading: Image.network(event.imageUrl),
         title: Text(event.title),
-        subtitle: Text(event.isFree ? 'Gratis' : 'Pago'),
+        subtitle: Text(event.isFree ? 'Free' : 'Pay'),
         trailing: Text(event.category),
         onTap: () {
           Navigator.push(
